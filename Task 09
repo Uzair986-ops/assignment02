@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+void palindrom(char[]);
+int main() {
+	char input[100]{};
+	cout << "Enter Word :";
+	cin >> input;
+	palindrom(input);
+	return 0;
+}
+void palindrom(char arr[]) {
+	int length = 0;
+	bool isPalendrom = true;
+	while (arr[length] != '\0') {
+		length++;
+	}
+	int x = length - 1;
+	for (int i = 0; i < length / 2; i++)
+	{
+		if (arr[i] != arr[x])
+		{
+			isPalendrom = false;
+			break;
+		}
+		x--;
+
+	}
+	if (isPalendrom)
+	{
+		cout << "This is a Palindrom" << endl;
+	}
+	else
+	{
+		cout << "This is Not palindrom" << endl;
+	}
+}
