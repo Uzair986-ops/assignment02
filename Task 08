@@ -1,0 +1,31 @@
+#include <iostream>
+#include <fstream>
+void countWordsfromFile(char filepath[]);
+using namespace std;
+int main() {
+	char path[100]{};
+	cout << "Enter File Name or Path :";
+	cin.getline(path, 100);
+	countWordsfromFile(path);
+	return 0;
+}
+void countWordsfromFile(char filepath[]) {
+	ifstream in;
+	in.open(filepath);
+	char word[100]{};
+
+	if (in) {
+		int count = 0;
+		while (in >> word)
+		{
+			count++;
+		}
+
+		cout << "Words Count :" << count << endl;
+	}
+	else
+	{
+		cout << "File does not exist......" << endl;
+	}
+
+}
