@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+void reverseOrder(char[]);
+int main() {
+	char inputArr[100]{};
+	cout << "Enter a Text :";
+	cin.getline(inputArr, 100);
+	reverseOrder(inputArr);
+
+
+	return 0;
+}
+void reverseOrder(char arr[]) {
+	int length = 0;
+	while (arr[length] != '\0') {
+		length++;
+	}
+	int x = length - 1;
+	for (int i = 0; i < x; i++)
+	{
+		char temp = arr[i];
+		arr[i] = arr[x];
+		arr[x] = temp;
+		x--;
+	}
+	cout << "Reversed Array :" << arr << endl;
+}
